@@ -69,7 +69,7 @@ class ScribeClient(object):
         
     def log(self, category, message):
         '''specify a category and send the message'''
-        message = time.strftime('%H:%M:%S') + '\t' + message # add timestamp before log
+        #message = time.strftime('%H:%M:%S') + '\t' + message # add timestamp before log
         log_entry = scribe.LogEntry(category=category, message=message)
         try:
             self.client.Log([log_entry])
